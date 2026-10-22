@@ -1,0 +1,92 @@
+/*Reset*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    min-height:100vh;/*Makes the body at least as tall as the browser window. 100vh means 100% of the viewport height.*/
+    font-family: Arial,sans-serif;
+    /*Creates a soft gradient using pink, light blue, and cream. 135deg controls the direction of the gradient.*/
+    background: linear-gradient(135deg, #fdf2f8, #eef2ff, #fff7ed);
+    display: flex;/*Makes the body a flex container so its direct children can be aligned using Flexbox.*/
+     justify-content: center; /*Centers the .main element horizontally because the body's default flex direction is a row.*/
+    align-items: flex-start;/*Places the .main element at the top of the available vertical space rather than vertically centering it.*/
+    padding: 60px 20px;
+    color: #1e293b;
+}
+.main {
+    width: 100%;
+    max-width: 650px;
+    background: rgba(255, 255, 255, 0.85);
+    padding: 35px;
+    border-radius: 24px;
+    box-shadow: 0 15px 45px rgba(79, 70, 229, 0.12);
+    /*Adds a soft shadow around the container.*/
+}
+.heading-1 {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 28px;
+    color: #312e81;
+}
+.todo-form {
+    display: flex;/*places the input and button next to each other.*/
+    gap: 12px;/*places the input and button next to each other.*/
+    margin-bottom: 25px;/*25px creates space between the form and the wishlist items below it.*/
+}
+.input {
+    flex:1; /*tells the input to grow and take up the remaining available space after the button and gap are accounted for.*/
+    min-width: 0;/*This allows the input to shrink below its default minimum content width when necessary.*/
+    padding: 15px 18px;
+    border: 2px solid #e0e7ff;
+    border-radius: 12px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+.input:focus {
+    border-color: #6366f1;
+    box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.12);
+}
+.input::placeholder {
+    color: red;   /*Makes the place holder text red*/
+}
+.button {
+    border: none;
+    border-radius: 12px;
+    padding: 15px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.2s;
+}
+.button {
+    border: none;
+    border-radius: 12px;
+    padding: 15px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.2s;
+}
+/*This gives the button an indigo-to-purple gradient with white text.*/
+.btn-primary {
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    color: white;
+}
+/*:hover applies while the pointer is over the button.
+
+
+
+translateY(-2px) moves the button up by 2px.
+The darker gradient makes the button feel interactive.*/
+.btn-primary:hover {
+    background: linear-gradient(135deg, #4f46e5, #7c3aed);
+    transform: translateY(-2px);
+}
+.todos-container {
+    display: flex;/*arranges the child items using Flexbox.*/
+    flex-direction: column;/*— places the items vertically, one below another.*/
+    gap: 12px;
+}
